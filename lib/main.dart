@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 void main(){
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
-    title: 'APP frases aleatórias',
+    title: 'APP frases Aqua Teen',
     home: frases(),
   ));
 }
@@ -34,7 +34,7 @@ class _frasesState extends State<frases> {
     '"Levanta, SEU BUNDÃO" - Fantasma Cibernético do Natal Passado'
   ];
 
-  var _frasesGerada = 'Clique abaixo para gerar uma frase';
+  var _frasesGerada = 'Clique abaixo para gerar uma frase do Aqua Teeen';
 
   void _gerarFrase() async {
     var numeroSorteado = Random().nextInt(_frases.length);
@@ -75,13 +75,13 @@ class _frasesState extends State<frases> {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              Image.asset('image/aqua-teen.png'),
+              Image.asset('image/aqua-teen.gif'),
               Text(
                 _frasesGerada,
                 style: TextStyle(
                   fontSize: 25,
-                  fontStyle: FontStyle.italic,
-                  color: Colors.white
+                  // fontStyle: FontStyle.italic,
+                  color: Colors.white,
                 ),
               ),
               ElevatedButton(
