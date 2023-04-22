@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 void main(){
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
-    title: 'APP frases Aqua Teen',
+    title: 'APP frases SENAI',
     home: frases(),
   ));
 }
@@ -18,35 +18,37 @@ class frases extends StatefulWidget {
 
 class _frasesState extends State<frases> {
   var _frases = [
-    '"Vai ver o que esse cagão quer e depois me diz o assunto" - Shake',
-    '"Deus, por que me amaldiçoaste com tanta popularidade?" - Shake',
-    '"Você é um rapaz novo, um rapaz bem abençoado, uma barriguinha bonita, os peito bonito. Invista seu dinheiro em imoveis!" - Shake',
-    '"Puts grila, eu não aguento aquele cara ele é muito irritante." - Fantasma Cibernético do Natal Passado',
-    '"E eu sei lá p****!" - Fantasma Cibernético do Natal Passado',
-    '"Vocês podem me dizer como eu compro ações? É na galinha ou é no porco?" - Shake',
-    '"Eu acho que vou rezar para jesus." - Shake',
-    '"Aqui é o Carl, é gostoso e não faz mal" - Carl',
-    '"Ih cacete, fui eu" - Fantasma Cibernético do Natal Passado',
-    '"Bom, a explicação vai demorar pra cacete. Vai la fora comer o angu do Gomes" - Fantasma Cibernético do Natal Passado',
-    '"Essa parada é ilegal..." - Carl',
-    '"Ei, quem é que vai me prender? Essas p**** de árvore?" - Carl',
-    '"Faz o seguinte gordo, vai lá em casa e usa nosso banheiro" - Fritoso',
-    '"Levanta, SEU BUNDÃO" - Fantasma Cibernético do Natal Passado'
+    'Os 3 maiores crimes de um estudante do SENAI:\n\n'
+        '1 - Vir sem uniforme\n\n'
+        '2 - Chegar 1 min atrasado do intervalo na aula do James\n\n'
+        '3 - Instalar CS 1.6 nas máquinas',
+    'Nunca pergunte a uma mulher sua idade \n\n'
+        'A um homem seu salario\n\n'
+        'E a um estudante do SENAI sua opinião sobre o W3Schools',
+    'Se tem uma coisa que eu aprendi com o Atila, é não fazer um import dentro de um laço de repetição.',
+    'Em algum lugar, numa aula de Banco de Dados...\n\n'
+    '"Cara, preenchi os dados no banco errado."\n\n'
+        '"Puts... vamos ter que deletar o banco todo."',
+    'Numa batalha entre um estudante do SENAI contra um da FATEC, sempre aposte no estudante da SENAI.'
   ];
 
-  var _frasesGerada = 'Clique abaixo para gerar uma frase do Aqua Teeen';
+  var _images = [
+    'image/aluno_senai.jpg',
+    'image/w3schools.jpg',
+    'image/confia_atila.png',
+    'image/banco_de_dados.png',
+    'image/senai_fatec.png'
+  ];
+
+  var _frasesGerada = 'Clique abaixo para gerar uma frase relacionada ao SENAI';
+  var _imagemGerada = 'image/logo-senai.png';
 
   void _gerarFrase() async {
     var numeroSorteado = Random().nextInt(_frases.length);
 
     setState(() {
-      _frasesGerada = '';
-    });
-
-    await Future.delayed(Duration(milliseconds: 500));
-
-    setState(() {
       _frasesGerada = _frases[numeroSorteado];
+      _imagemGerada = _images[numeroSorteado];
     });
   }
 
@@ -54,7 +56,7 @@ class _frasesState extends State<frases> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('As melhores frases Aqua Teen'),
+        title: Text('As melhores frases do SENAI'),
         backgroundColor: Colors.purple,
       ),
 
@@ -75,7 +77,11 @@ class _frasesState extends State<frases> {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              Image.asset('image/aqua-teen.gif'),
+              Image.asset(
+                _imagemGerada,
+                height: 200,
+                width: 400,
+              ),
               Text(
                 _frasesGerada,
                 style: TextStyle(

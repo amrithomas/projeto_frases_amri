@@ -63,8 +63,12 @@ flutter:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
   assets:
-    - image/aqua-teen.png
-    - image/aqua-teen.gif
+    - image/aluno_senai.jpg
+    - image/banco_de_dados.png
+    - image/confia_atila.png
+    - image/senai_fatec.png
+    - image/w3schools.jpg
+    - image/logo-senai.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
